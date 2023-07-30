@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useState } from 'react';
-import { GrFormNext, GrFormDown, GrFlows } from 'react-icons/gr';
+import { GrFormNext, GrFormDown, GrFlows} from 'react-icons/gr';
 
 export default function Sidenav() {
+ 
   // Create a state for each list item
   const [isReactOpen, setReactOpen] = useState(false);
   const [isSqlOpen, setSqlOpen] = useState(false);
@@ -16,14 +17,14 @@ export default function Sidenav() {
   const toggleLaravel = () => setLaravelOpen((prevState) => !prevState);
 
   return (
-    <div className="relative top-0 left-0 hidden md:flex md:w-[18%] min-h-full p-3 translate transition-all">
-      <div className="relative w-full h-full backdrop-blur bg-white shadow-md rounded-lg z-0">
+    <div className={`relative top-0 left-0 flex md:w-full min-h-[600px] p-3 z-50 md:z-auto `}>
+      <div className="relative w-full h-full backdrop-blur overflow-hidden bg-white shadow-md rounded-lg py-3 md:py-0 z-0">
         <div className="text-2xl p-4 flex items-center justify-between gap-4">
           <NavLink to='/'>Activities</NavLink>
-          <GrFlows />
+          <GrFlows className="hidden md:flex" />          
         </div>
         <hr />
-        <div className='p-3 w-full'>
+        <div className='p-3 w-full h-full overflow-y-scroll md:overflow-auto'>
           <ul className="list-none space-y-3 w-full">
             <NavLink to='react' onClick={toggleReact} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               React
@@ -37,11 +38,10 @@ export default function Sidenav() {
                 className={`flex flex-col list-none space-y-1 w-full ${isReactOpen ? 'opacity-100' : 'opacity-0'
                   } transition-opacity duration-300`}
               >
-                <li>
-                  <a href="#" className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
-                    Handson 1
-                  </a>
-                </li>
+                <NavLink to='react/handson8'
+                  className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
+                  Handson 1
+                </NavLink>
                 <li>
                   <a href="#" className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
                     Handson 2
@@ -110,7 +110,7 @@ export default function Sidenav() {
               </ul>
             )}
 
-            <NavLink to='sql'  onClick={toggleSql} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+            <NavLink to='sql' onClick={toggleSql} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               SQL
               <span className="text-xl cursor-pointer">
                 {isSqlOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
@@ -163,11 +163,10 @@ export default function Sidenav() {
                 className={`flex flex-col list-none space-y-1 w-full ${isPhpOpen ? 'opacity-100' : 'opacity-0'
                   } transition-opacity duration-300`}
               >
-                <li>
-                  <a href="#" className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
-                    Handson 1
-                  </a>
-                </li>
+                <NavLink to='handson8'
+                  className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
+                  Handson 1
+                </NavLink>
                 <li>
                   <a href="#" className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
                     Handson 2
@@ -191,9 +190,9 @@ export default function Sidenav() {
                 </li>
               </ul>
             )}
-            
 
-            <NavLink to='laravel'  onClick={toggleLaravel} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+
+            <NavLink to='laravel' onClick={toggleLaravel} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               Laravel
               <span className="text-xl cursor-pointer">
                 {isLaravelOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
@@ -236,6 +235,6 @@ export default function Sidenav() {
         </div>
         <hr />
       </div>
-    </div>
+    </div >
   );
 }

@@ -11,17 +11,20 @@ import SqlPage from './SqlPage';
 import RootLayout from './RootLayOut';
 import PhpPage from './PhpPage';
 import LaravelPage from './LaravelPage';
+import Eight from './react/react8/Eight';
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
-      <Route path='react' element={<ReactPage />} />
+      <Route path='react' element={<ReactPage />} >
+        <Route path='handson8' element={<Eight/>}/>
+      </Route>
       <Route path='sql' element={<SqlPage />} />
       <Route path='php' element={<PhpPage />} />
       <Route path='laravel' element={<LaravelPage />} />
-    </Route>
+    </Route >
   )
 )
 
