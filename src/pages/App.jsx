@@ -8,7 +8,7 @@ import {
 import Home from './Home';
 import ReactPage from './ReactPage';
 import SqlPage from './SqlPage';
-import RootLayout from './RootLayOut';
+import RootLayout from './RootLayout';
 import PhpPage from './PhpPage';
 import LaravelPage from './LaravelPage';
 import Eight from './react/react8/Eight';
