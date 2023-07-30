@@ -25,9 +25,9 @@ export default function Sidenav() {
         <hr />
         <div className='p-3 w-full'>
           <ul className="list-none space-y-3 w-full">
-            <NavLink to='react' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+            <NavLink to='react' onClick={toggleReact} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               React
-              <span className="text-xl cursor-pointer" onClick={toggleReact}>
+              <span className="text-xl cursor-pointer">
                 {isReactOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
             </NavLink>
@@ -110,9 +110,9 @@ export default function Sidenav() {
               </ul>
             )}
 
-            <NavLink to='sql' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+            <NavLink to='sql'  onClick={toggleSql} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               SQL
-              <span className="text-xl cursor-pointer" onClick={toggleSql}>
+              <span className="text-xl cursor-pointer">
                 {isSqlOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
             </NavLink>
@@ -147,12 +147,13 @@ export default function Sidenav() {
                     Handson 5
                   </a>
                 </li>
+                <hr />
               </ul>
             )}
 
-            <NavLink to='php' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+            <NavLink to='php' onClick={togglePhp} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               PHP
-              <span className="text-xl cursor-pointer" onClick={togglePhp}>
+              <span className="text-xl cursor-pointer">
                 {isPhpOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
             </NavLink>
@@ -186,13 +187,15 @@ export default function Sidenav() {
                   <a href="#" className="hover:shadow flex w-full p-1 px-2 rounded-md duration-200 hover:bg-black/5">
                     Handson 5
                   </a>
+                  <hr />
                 </li>
               </ul>
             )}
+            
 
-            <NavLink to='laravel' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+            <NavLink to='laravel'  onClick={toggleLaravel} className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
               Laravel
-              <span className="text-xl cursor-pointer" onClick={toggleLaravel}>
+              <span className="text-xl cursor-pointer">
                 {isLaravelOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
             </NavLink>

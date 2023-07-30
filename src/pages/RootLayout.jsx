@@ -12,7 +12,7 @@ function RootLayout() {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 5000);
+        }, 3000);
     }, []);
 
 
