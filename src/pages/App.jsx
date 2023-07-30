@@ -8,10 +8,10 @@ import {
 import Home from './Home';
 import ReactPage from './ReactPage';
 import SqlPage from './SqlPage';
-import RootLayout from './RootLayout';
 import PhpPage from './PhpPage';
 import LaravelPage from './LaravelPage';
 import Eight from './react/react8/Eight';
+import RootLayout from './RootLayout';
 
 
 const router = createBrowserRouter(
@@ -19,7 +19,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path='react' element={<ReactPage />} >
-        <Route path='handson8' element={<Eight/>}/>
+        <Route path='handson8' element={<Eight />} />
       </Route>
       <Route path='sql' element={<SqlPage />} />
       <Route path='php' element={<PhpPage />} />
