@@ -1,38 +1,34 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider
+} from 'react-router-dom'
 
-import { useState, useEffect } from 'react';
-import LoaderScreen from "../views/components/LoaderScreen";
-import Navbar from "../views/components/layouts/navbar"
-import Section from "../views/components/layouts/section"
-import Sidenav from "../views/components/layouts/sidenav"
+import Home from './Home';
+import ReactPage from './ReactPage';
+import SqlPage from './SqlPage';
+import RootLayout from './RootLayOut';
+import PhpPage from './PhpPage';
+import LaravelPage from './LaravelPage';
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path='react' element={<ReactPage />} />
+      <Route path='sql' element={<SqlPage />} />
+      <Route path='php' element={<PhpPage />} />
+      <Route path='laravel' element={<LaravelPage />} />
+    </Route>
+  )
+)
 
 function App() {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-  }, []);
-
-
   return (
-    <div className="relative w-full h-screen">
-      {loading ? (
-        <LoaderScreen />
-
-      ) : (
-
-        <div className="bg-blue-200 top-0 relative w-full h-max py-3">
-          <Navbar />
-          <div className="relative flex">
-            <Sidenav />
-            <Section />
-          </div>
-        </div>
-      )}
-    </div>
-  )
+    <RouterProvider router={router} />
+  );
 }
 
 export default App

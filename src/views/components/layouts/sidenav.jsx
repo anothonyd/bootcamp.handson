@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 import { GrFormNext, GrFormDown, GrFlows } from 'react-icons/gr';
 
@@ -18,18 +19,18 @@ export default function Sidenav() {
     <div className="relative top-0 left-0 hidden md:flex md:w-[18%] min-h-full p-3 translate transition-all">
       <div className="relative w-full h-full backdrop-blur bg-white shadow-md rounded-lg z-0">
         <div className="text-2xl p-4 flex items-center justify-between gap-4">
-          <h1> Activities</h1>
+          <NavLink to='/'>Activities</NavLink>
           <GrFlows />
         </div>
         <hr />
         <div className='p-3 w-full'>
           <ul className="list-none space-y-3 w-full">
-            <li className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
-              <a href="#">React</a>
+            <NavLink to='react' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+              React
               <span className="text-xl cursor-pointer" onClick={toggleReact}>
                 {isReactOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
-            </li>
+            </NavLink>
             {/* Nested unordered list */}
             {isReactOpen && (
               <ul
@@ -109,12 +110,12 @@ export default function Sidenav() {
               </ul>
             )}
 
-            <li className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
-              <a href="#">SQL</a>
+            <NavLink to='sql' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+              SQL
               <span className="text-xl cursor-pointer" onClick={toggleSql}>
                 {isSqlOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
-            </li>
+            </NavLink>
             {/* Nested unordered list */}
             {isSqlOpen && (
               <ul
@@ -149,12 +150,12 @@ export default function Sidenav() {
               </ul>
             )}
 
-            <li className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
-              <a href="#">PHP</a>
+            <NavLink to='php' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+              PHP
               <span className="text-xl cursor-pointer" onClick={togglePhp}>
                 {isPhpOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
-            </li>
+            </NavLink>
             {/* Nested unordered list */}
             {isPhpOpen && (
               <ul
@@ -189,12 +190,12 @@ export default function Sidenav() {
               </ul>
             )}
 
-            <li className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
-              <a href="#">Laravel</a>
+            <NavLink to='laravel' className="flex gap-3 text-xl items-center justify-between hover:shadow hover:bg-black/5 w-full p-1 rounded-md">
+              Laravel
               <span className="text-xl cursor-pointer" onClick={toggleLaravel}>
                 {isLaravelOpen ? <GrFormNext className='hover:shadow rounded' /> : <GrFormDown className='hover:shadow rounded' />}
               </span>
-            </li>
+            </NavLink>
             {/* Nested unordered list */}
             {isLaravelOpen && (
               <ul

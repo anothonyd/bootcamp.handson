@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GrClose, GrMenu } from "react-icons/gr";
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -7,8 +8,6 @@ export default function Navbar() {
     const toggleMenu = () => {
         setMenuOpen((prevState) => !prevState);
     };
-
-
 
 
     return (
@@ -28,29 +27,19 @@ export default function Navbar() {
                     } transition-all ease-in duration-300`}>
                     <div className='bg-white rounded-lg md:flex md:items-center gap-5'>
                     <li className=" my-6 md:my-0">
-                        <a href="#" className="text-xl hover:text-cyan-500 duration-500">
-                            HOME
-                        </a>
+                        <NavLink to='/' className="text-xl hover:text-cyan-500 duration-500">
+                            Home
+                        </NavLink>
                     </li>
                     <li className=" my-6 md:my-0">
                         <a href="#" className="text-xl hover:text-cyan-500 duration-500">
-                            SERVICE
-                        </a>
-                    </li>
-                    <li className=" my-6 md:my-0">
-                        <a href="#" className="text-xl hover:text-cyan-500 duration-500">
-                            ABOUT
-                        </a>
-                    </li>
-                    <li className=" my-6 md:my-0">
-                        <a href="#" className="text-xl hover:text-cyan-500 duration-500">
-                            CONTACT
+                            Contact
                         </a>
                     </li>
                     <button
-                        className="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 hover:bg-cyan-500 rounded"
+                        className="bg-cyan-400 text-white tracking-wide duration-500 px-6 py-2 hover:bg-cyan-500 rounded"
                     >
-                        Get started
+                        GET STARTED
                     </button>
                 </div>
             </ul>
